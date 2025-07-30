@@ -1,1 +1,385 @@
-# gourab.com.bd
+<!--
+INSTRUCTIONS FOR GITHUB PAGES DEPLOYMENT:
+
+1. Create a new repository on GitHub. You can name it anything you like, for example, "my-portfolio".
+2. Create a file named "index.html" in your new repository and paste all the code from this document into it.
+3. Create a folder named "assets" inside your repository.
+4. Upload your profile picture to the "assets" folder and name it "profile.png".
+5. Go to your repository's "Settings" tab.
+6. In the left sidebar, click on "Pages".
+7. Under "Build and deployment", select "Deploy from a branch" as the source.
+8. Under "Branch", select "main" (or "master") and keep the folder as "/(root)". Click "Save".
+9. Wait a few minutes for GitHub to build and deploy your site. Your live portfolio URL will be displayed on the same page. It will look something like: https://your-username.github.io/my-portfolio/
+-->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gourab Saha - Accountant &amp; Graphic Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#2c3e50', // Dark Slate Blue
+                        'brand-secondary': '#34495e', // Wet Asphalt
+                        'brand-accent': '#3498db', // Peter River Blue
+                        'brand-light': '#fdfdfd', // Off-white for paper texture
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a more refined look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        body {
+            background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+            background-color: #fdfdfd;
+        }
+        /* Added transition for smoother hover effects */
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-brand-light font-sans text-brand-primary">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="assets/profile.png" alt="Gourab Saha" class="w-10 h-10 rounded-full" />
+                <span class="text-2xl font-serif font-bold text-brand-primary">Gourab Saha</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-brand-accent transition-all">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-brand-accent transition-all">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-brand-accent transition-all">Skills</a>
+                <a href="#experience" class="text-gray-600 hover:text-brand-accent transition-all">Experience</a>
+                <a href="#education" class="text-gray-600 hover:text-brand-accent transition-all">Education</a>
+                <a href="#extracurricular" class="text-gray-600 hover:text-brand-accent transition-all">Activities</a>
+                <a href="#accomplishments" class="text-gray-600 hover:text-brand-accent transition-all">Accomplishments</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-brand-accent transition-all">Portfolio</a>
+                <a href="#footer" class="text-gray-600 hover:text-brand-accent transition-all">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-200">Skills</a>
+            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-gray-200">Experience</a>
+            <a href="#education" class="block py-2 px-4 text-sm hover:bg-gray-200">Education</a>
+            <a href="#extracurricular" class="block py-2 px-4 text-sm hover:bg-gray-200">Activities</a>
+            <a href="#accomplishments" class="block py-2 px-4 text-sm hover:bg-gray-200">Accomplishments</a>
+            <a href="#portfolio" class="block py-2 px-4 text-sm hover:bg-gray-200">Portfolio</a>
+            <a href="#footer" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="bg-white/50">
+            <div class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-5xl md:text-6xl font-serif font-bold text-brand-primary leading-tight mb-4">Balancing the Books, Designing the Future</h1>
+                    <p class="text-lg text-gray-700 mb-8">Welcome! I'm Gourab Saha, a dedicated CA student with a passion for financial accuracy and a creative eye for graphic design.</p>
+                    <a href="#footer" class="bg-brand-accent text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-all transform hover:scale-105">Get In Touch</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <img src="https://placehold.co/400x400/ecf0f1/2c3e50?text=Gourab+Saha" alt="Gourab Saha Portrait" class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover" />
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12">About Me</h2>
+                <div class="bg-white/70 p-10 rounded-lg shadow-lg max-w-4xl mx-auto">
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        I am a detail-oriented and driven Chartered Accountancy student with a unique blend of analytical and creative skills. My journey in finance has equipped me with a strong foundation in accounting principles, taxation, and financial management. Alongside my studies, I have cultivated a passion for graphic design, allowing me to approach problems with both logic and creativity. I believe this dual perspective enables me to deliver solutions that are not only precise and effective but also visually compelling.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="bg-white/50 py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-center mb-16">My Skills</h2>
+                <div class="max-w-5xl mx-auto">
+                    <!-- Professional Skills -->
+                    <div class="mb-16">
+                        <h3 class="text-3xl font-bold mb-8 text-center text-brand-secondary">Professional Skills</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div><h4 class="font-semibold text-brand-primary">Audit &amp; Assurance</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg></div><h4 class="font-semibold text-brand-primary">Taxation</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></div><h4 class="font-semibold text-brand-primary">Business Process Development</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12.5a2 2 0 002-2V6.5a2 2 0 00-2-2H7"></path></svg></div><h4 class="font-semibold text-brand-primary">Graphics Design</h4></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Office Tools -->
+                    <div class="mb-16">
+                        <h3 class="text-3xl font-bold mb-8 text-center text-brand-secondary">Office Tools</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-8 text-center">
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div><h4 class="font-semibold text-brand-primary">MS Word</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div><h4 class="font-semibold text-brand-primary">MS Excel</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg></div><h4 class="font-semibold text-brand-primary">MS PowerPoint</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg></div><h4 class="font-semibold text-brand-primary">MS Visio</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7s8 4 8 4 8-4 8-4M12 3s8 4 8 4"></path></svg></div><h4 class="font-semibold text-brand-primary">ORACLE</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H7a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg></div><h4 class="font-semibold text-brand-primary">QuickBooks</h4></div>
+                        </div>
+                    </div>
+
+                    <!-- Adobe Tools -->
+                    <div>
+                        <h3 class="text-3xl font-bold mb-8 text-center text-brand-secondary">Adobe Tools</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-center">
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536l12.232-12.232z"></path></svg></div><h4 class="font-semibold text-brand-primary">Adobe Illustrator</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path></svg></div><h4 class="font-semibold text-brand-primary">Adobe Aftereffect</h4></div>
+                            <div class="flex flex-col items-center p-4 bg-brand-light rounded-lg shadow-sm transition-all transform hover:-translate-y-1"><div class="bg-brand-accent text-white rounded-full p-4 mb-3"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div><h4 class="font-semibold text-brand-primary">Adobe Photoshop</h4></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-center mb-16">Experience</h2>
+                <div class="max-w-4xl mx-auto relative border-l-2 border-brand-accent pl-10">
+                    <!-- Experience Item 1 -->
+                    <div class="mb-12">
+                        <div class="absolute w-6 h-6 bg-brand-accent rounded-full -left-3 mt-1.5 border-4 border-white"></div>
+                        <p class="text-sm font-medium text-brand-accent">June 2023 - Present</p>
+                        <h3 class="text-xl font-bold text-brand-secondary mt-1">Senior Audit Associate</h3>
+                        <p class="text-md font-medium text-gray-600 mb-2">ACNABIN, Chartered Accountants</p>
+                        <p class="text-gray-700">Level-13 &amp; 15, 12, BDBL Bhaban, Commercial Area, Dhaka 1215.</p>
+                    </div>
+                     <!-- Experience Item 2 -->
+                    <div class="mb-12">
+                        <div class="absolute w-6 h-6 bg-brand-accent rounded-full -left-3 mt-1.5 border-4 border-white"></div>
+                        <p class="text-sm font-medium text-brand-accent">2020 - Present</p>
+                        <h3 class="text-xl font-bold text-brand-secondary mt-1">Freelance Graphic Designer</h3>
+                        <p class="text-md font-medium text-gray-600 mb-2">Self-Employed</p>
+                        <p class="text-gray-700">Solved more than 70 domestic and foreign client design-related problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="bg-white/50 py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-center mb-16">Educational Background</h2>
+                <div class="max-w-4xl mx-auto relative border-l-2 border-brand-accent pl-10">
+                    <!-- Education Item 1 -->
+                    <div class="mb-12">
+                        <div class="absolute w-6 h-6 bg-brand-accent rounded-full -left-3 mt-1.5 border-4 border-white"></div>
+                        <p class="text-sm font-medium text-brand-accent">Ongoing</p>
+                        <h3 class="text-xl font-bold text-brand-secondary mt-1">Chartered Accountant (Partly Qualified)</h3>
+                        <p class="text-md font-medium text-gray-600 mb-2">Institute of Chartered Accountant Bangladesh</p>
+                        <p class="text-gray-700">Level: Professional Level.</p>
+                    </div>
+                    <!-- Education Item 2 -->
+                    <div class="mb-12">
+                        <div class="absolute w-6 h-6 bg-brand-accent rounded-full -left-3 mt-1.5 border-4 border-white"></div>
+                        <p class="text-sm font-medium text-brand-accent">2020 - 2024</p>
+                        <h3 class="text-xl font-bold text-brand-secondary mt-1">Bachelor of Business Administration (BBA)</h3>
+                        <p class="text-md font-medium text-gray-600 mb-2">Jatiya Kabi Kazi Nazrul Islam University</p>
+                        <p class="text-gray-700">Major: Accounting and Information Systems (AIS). Result: CGPA 3.44 out of 4.00.</p>
+                    </div>
+                    <!-- Education Item 3 -->
+                    <div class="mb-12">
+                        <div class="absolute w-6 h-6 bg-brand-accent rounded-full -left-3 mt-1.5 border-4 border-white"></div>
+                        <p class="text-sm font-medium text-brand-accent">2018</p>
+                        <h3 class="text-xl font-bold text-brand-secondary mt-1">Higher School Certificate (HSC)</h3>
+                        <p class="text-md font-medium text-gray-600 mb-2">Sirajganj Govt College, Sirajganj</p>
+                        <p class="text-gray-700">Group: Business Studies. Result: GPA 4.83 out of 5.00.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Extra-Curricular Activities Section -->
+        <section id="extracurricular" class="py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-center mb-16">Extra-Curricular Activities</h2>
+                <div class="max-w-4xl mx-auto relative border-l-2 border-brand-accent pl-10">
+                    <!-- Activity 1 -->
+                    <div class="mb-12">
+                        <div class="absolute w-6 h-6 bg-brand-accent rounded-full -left-3 mt-1.5 border-4 border-white"></div>
+                        <p class="text-sm font-medium text-brand-accent">07 March 2023 - Present</p>
+                        <h3 class="text-xl font-bold text-brand-secondary mt-1">Organizing Secretary</h3>
+                        <p class="text-md font-medium text-gray-600 mb-2">Jatiya Kabi Kazi Nazrul Islam University Career Club</p>
+                        <p class="text-gray-700">Previous Designations: Director, Branding &amp; Publication (Lead 6 members), Team Connector (Lead 12 members).</p>
+                    </div>
+                    <!-- Activity 2 -->
+                    <div class="mb-12">
+                        <div class="absolute w-6 h-6 bg-brand-accent rounded-full -left-3 mt-1.5 border-4 border-white"></div>
+                        <p class="text-sm font-medium text-brand-accent">June 2020 - October 2020</p>
+                        <h3 class="text-xl font-bold text-brand-secondary mt-1">Call Attender</h3>
+                        <p class="text-md font-medium text-gray-600 mb-2">Phone-e-Nittoponno</p>
+                        <p class="text-gray-700">Contributed to a community-focused service initiative.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accomplishments Section -->
+        <section id="accomplishments" class="bg-white/50 py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-center mb-16">Accomplishments</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white/70 p-6 rounded-lg shadow-lg flex items-start space-x-4 transition-all transform hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0"><div class="bg-brand-accent text-white rounded-full p-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg></div></div>
+                        <div><h3 class="text-lg font-bold text-brand-secondary mb-1">Business Process Development</h3><p class="text-gray-700">Developed 117 (23 Directly) Business Process for the Walton Hi-Tech Industries PLC.</p></div>
+                    </div>
+                    <div class="bg-white/70 p-6 rounded-lg shadow-lg flex items-start space-x-4 transition-all transform hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0"><div class="bg-brand-accent text-white rounded-full p-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg></div></div>
+                        <div><h3 class="text-lg font-bold text-brand-secondary mb-1">Policy Review</h3><p class="text-gray-700">Review and write down 17 operation related policy for the Walton Hi-Tech Industries PLC.</p></div>
+                    </div>
+                    <div class="bg-white/70 p-6 rounded-lg shadow-lg flex items-start space-x-4 transition-all transform hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0"><div class="bg-brand-accent text-white rounded-full p-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div></div>
+                        <div><h3 class="text-lg font-bold text-brand-secondary mb-1">Internal Audit</h3><p class="text-gray-700">Conduct internal audit on Production Management, Transport, Servicing, Costing, and Fixed Assets departments.</p></div>
+                    </div>
+                    <div class="bg-white/70 p-6 rounded-lg shadow-lg flex items-start space-x-4 transition-all transform hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0"><div class="bg-brand-accent text-white rounded-full p-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div></div>
+                        <div><h3 class="text-lg font-bold text-brand-secondary mb-1">Event Organization</h3><p class="text-gray-700">Successfully organized multiple large-scale university events as a Moderator and Coordinator.</p></div>
+                    </div>
+                    <div class="bg-white/70 p-6 rounded-lg shadow-lg flex items-start space-x-4 transition-all transform hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0"><div class="bg-brand-accent text-white rounded-full p-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg></div></div>
+                        <div><h3 class="text-lg font-bold text-brand-secondary mb-1">Creative &amp; Communication Award</h3><p class="text-gray-700">Received "Best Creative Cap &amp; Communicator Award" for a strong role in creative and communication teams.</p></div>
+                    </div>
+                    <div class="bg-white/70 p-6 rounded-lg shadow-lg flex items-start space-x-4 transition-all transform hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0"><div class="bg-brand-accent text-white rounded-full p-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.085a2 2 0 00-1.736.97l-1.9 4.5a2 2 0 00-.34 1.03V16l4-3m-6 4v-2a2 2 0 012-2h2.5"></path></svg></div></div>
+                        <div><h3 class="text-lg font-bold text-brand-secondary mb-1">Team Leadership</h3><p class="text-gray-700">Selected as "Best Team Connector" three times for effective performance.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="bg-white/50 py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12">Graphic Design Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item 1 -->
+                    <div class="bg-brand-light rounded-lg shadow-lg overflow-hidden transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/34495e/ecf0f1?text=Brand+Identity" alt="Brand Identity Project" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">Branding</p>
+                            <h3 class="text-xl font-bold text-brand-secondary mb-3">Brand Identity for a FinTech Startup</h3>
+                            <p class="text-gray-700 mb-4">Developed a complete brand guide, including logo, color palette, and typography for a new financial tech company.</p>
+                            <a href="https://www.behance.net/gourabsaha1" target="_blank" class="font-bold text-brand-accent hover:underline">View Project &#8594;</a>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="bg-brand-light rounded-lg shadow-lg overflow-hidden transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/3498db/ffffff?text=Infographics" alt="Infographic Design Project" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">Infographic Design</p>
+                            <h3 class="text-xl font-bold text-brand-secondary mb-3">Infographics for Annual Report</h3>
+                            <p class="text-gray-700 mb-4">Designed a series of infographics to visualize complex financial data, making the annual report more engaging.</p>
+                            <a href="https://www.behance.net/gourabsaha1" target="_blank" class="font-bold text-brand-accent hover:underline">View Project &#8594;</a>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <div class="bg-brand-light rounded-lg shadow-lg overflow-hidden transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/2c3e50/ecf0f1?text=Social+Media" alt="Social Media Graphics" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">Social Media Graphics</p>
+                            <h3 class="text-xl font-bold text-brand-secondary mb-3">Social Media Campaign Graphics</h3>
+                            <p class="text-gray-700 mb-4">Created a cohesive set of visuals for a product launch campaign across multiple social media platforms.</p>
+                            <a href="https://www.behance.net/gourabsaha1" target="_blank" class="font-bold text-brand-accent hover:underline">View Project &#8594;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-brand-secondary text-brand-light py-10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                 <!-- Facebook Icon -->
+                 <a href="https://www.facebook.com/Gourab.saha.1" target="_blank" class="hover:text-brand-accent transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                 </a>
+                 <!-- Instagram Icon -->
+                 <a href="#" target="_blank" class="hover:text-brand-accent transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.001C8.729 1.162 8.316 1.173 7.053 1.23c-3.652.166-5.85 2.352-6.018 6.017C1.001 8.73 1 9.148 1 12s.001 3.27.034 4.753c.168 3.665 2.365 5.85 6.018 6.018 1.264.057 1.678.068 4.949.068s3.685-.011 4.949-.068c3.653-.168 5.85-2.353 6.018-6.018.033-1.483.034-1.898.034-4.753s-.001-3.27-.034-4.753c-.168-3.665-2.365-5.85-6.018-6.017-1.264-.057-1.678-.068-4.949-.068zm0 5.838a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.162a3.162 3.162 0 1 1 0-6.324 3.162 3.162 0 0 1 0 6.324zM16.949 6.807a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z" clip-rule="evenodd"/></svg>
+                 </a>
+                 <!-- LinkedIn Icon -->
+                 <a href="https://www.linkedin.com/in/gourabsahaais/" target="_blank" class="hover:text-brand-accent transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                 </a>
+                 <!-- WhatsApp Icon -->
+                 <a href="https://wa.me/qr/5UKYC2OBWOSIN1" target="_blank" class="hover:text-brand-accent transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.426 5.574a9.922 9.922 0 0 0-14.092 0C.742 9.166 1.43 14.89 5.574 18.426c3.593 3.14 9.23 3.14 12.823 0C22.569 14.89 23.256 9.166 19.834 5.574zM9.228 16.328l-.13-.022c-.4-.066-.78-.2-1.133-.429-1.133-.737-2.088-1.692-2.843-2.825-.813-1.2-.9-2.678-.284-3.633l.033-.055c.2-.319.484-.528.814-.583l.286-.044c.341-.055.671.055.913.286l.209.209c.253.253.341.605.242.924l-.352 1.1c-.11.341-.022.726.22.968.605.605 1.254 1.001 1.991 1.221l.341.1c.363.044.693-.066.924-.319l.187-.209c.264-.297.682-.363 1.045-.22l1.21.484c.396.154.682.495.748.924l.066.451c.033.473-.154.913-.495 1.221l-.231.209c-.429.385-.968.616-1.54.65z" clip-rule="evenodd"/></svg>
+                 </a>
+                  <!-- Behance Icon -->
+                 <a href="https://www.behance.net/gourabsaha1" target="_blank" class="hover:text-brand-accent transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.271 10.312h-4.584V8.542h4.584v1.77zM15.688 12.333c0-1.215.99-2.208 2.208-2.208s2.208.993 2.208 2.208c0 1.216-.99 2.209-2.208 2.209s-2.208-.993-2.208-2.209zM8.312 7.104H2v10h6.312c2.534 0 4.584-2.05 4.584-4.583 0-2.534-2.05-4.584-4.584-4.584zm.24 7.125H5.125V9.812h3.427c.99 0 1.791.802 1.791 1.792s-.802 1.625-1.791 1.625z"/></svg>
+                 </a>
+            </div>
+            <p class="text-sm">&copy; 2025 Gourab Saha. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
