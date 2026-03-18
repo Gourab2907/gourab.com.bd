@@ -201,7 +201,7 @@
                 
                 <div class="md:w-1/2 mt-16 md:mt-0 relative flex justify-center lg:justify-end">
                     <div class="relative">
-                        <!-- Increased size: w-80 h-80 on mobile, w-[440px] h-[440px] on desktop -->
+                        <!-- Large round shape profile picture -->
                         <div class="w-80 h-80 md:w-[440px] md:h-[440px] reveal-img-container shadow-2xl border-8 border-white dark:border-gray-800">
                             <div class="reveal-mask"></div>
                             <img src="Assets/ProfilePicture2.png" 
@@ -209,7 +209,7 @@
                                  alt="Gourab Saha" class="w-full h-full object-cover hero-img scale-110" />
                         </div>
 
-                        <!-- Badge repositioned for larger circle -->
+                        <!-- Fixed Badge Positioning -->
                         <div class="absolute bottom-10 -left-6 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl floating-badge hidden md:flex items-center gap-3 z-20 border border-gray-100 dark:border-gray-700">
                             <div class="bg-brand-100 dark:bg-gray-700 p-2 rounded-full text-brand-accent">
                                 <i class="ph ph-chart-line-up text-2xl"></i>
@@ -371,30 +371,33 @@
                         <p class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-4">Insights</p>
                         <h2 class="text-4xl md:text-5xl font-serif font-bold">Latest Articles</h2>
                     </div>
-                    <a href="https://www.linkedin.com/in/gourabsaha07/" target="_blank" class="hidden md:inline-flex items-center gap-2 font-semibold border-b border-brand-900 dark:border-white pb-1 hover:text-brand-accent transition-colors">
+                    <a href="https://www.linkedin.com/in/gourabsaha07/" target="_blank" class="hidden md:inline-flex items-center gap-2 font-semibold border-b border-brand-900 dark:border-white pb-1 hover-target hover:text-brand-accent transition-colors">
                         LinkedIn Profile <i class="ph ph-linkedin-logo"></i>
                     </a>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <article class="bento-card rounded-3xl overflow-hidden bg-white dark:bg-gray-800 shadow-sm scroll-anim border border-gray-100 dark:border-gray-700">
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop" class="h-48 w-full object-cover" />
-                        <div class="p-6">
-                            <h3 class="font-bold mb-2">Bookkeeping Essentials</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-white">
+                    <article class="bento-card rounded-3xl overflow-hidden bg-white dark:bg-gray-800 shadow-sm scroll-anim border border-gray-100 dark:border-gray-700 group relative min-h-[400px]">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform" />
+                        <div class="absolute inset-0 bg-black/60"></div>
+                        <div class="relative p-6 h-full flex flex-col justify-end">
+                            <h3 class="font-bold mb-4">Bookkeeping Essentials</h3>
                             <a href="https://www.linkedin.com/posts/gourabsaha07_bookkeeping-financialcontrol-accounting-activity-7407395848827023360-XgWi" target="_blank" class="text-brand-accent text-sm font-bold flex items-center gap-1">Read on LinkedIn <i class="ph ph-arrow-up-right"></i></a>
                         </div>
                     </article>
-                    <article class="bento-card rounded-3xl overflow-hidden bg-white dark:bg-gray-800 shadow-sm scroll-anim border border-gray-100 dark:border-gray-700" style="transition-delay: 100ms;">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" class="h-48 w-full object-cover" />
-                        <div class="p-6">
-                            <h3 class="font-bold mb-2">Mastering QuickBooks</h3>
+                    <article class="bento-card rounded-3xl overflow-hidden bg-white dark:bg-gray-800 shadow-sm scroll-anim border border-gray-100 dark:border-gray-700 group relative min-h-[400px]" style="transition-delay: 100ms;">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform" />
+                        <div class="absolute inset-0 bg-black/60"></div>
+                        <div class="relative p-6 h-full flex flex-col justify-end">
+                            <h3 class="font-bold mb-4">Mastering QuickBooks</h3>
                             <a href="https://www.linkedin.com/posts/gourabsaha07_quickbooks-bankreconciliation-bookkeeping-activity-7402324435329765376-vCWn" target="_blank" class="text-brand-accent text-sm font-bold flex items-center gap-1">Read on LinkedIn <i class="ph ph-arrow-up-right"></i></a>
                         </div>
                     </article>
-                    <article class="bento-card rounded-3xl overflow-hidden bg-white dark:bg-gray-800 shadow-sm scroll-anim border border-gray-100 dark:border-gray-700" style="transition-delay: 200ms;">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop" class="h-48 w-full object-cover" />
-                        <div class="p-6">
-                            <h3 class="font-bold mb-2">Financial Strategy</h3>
+                    <article class="bento-card rounded-3xl overflow-hidden bg-white dark:bg-gray-800 shadow-sm scroll-anim border border-gray-100 dark:border-gray-700 group relative min-h-[400px]" style="transition-delay: 200ms;">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform" />
+                        <div class="absolute inset-0 bg-black/60"></div>
+                        <div class="relative p-6 h-full flex flex-col justify-end">
+                            <h3 class="font-bold mb-4">Financial Strategy</h3>
                             <a href="https://www.linkedin.com/posts/gourabsaha07_bookkeeping-financialcontrol-accounting-activity-7410552804488093696-_NVO" target="_blank" class="text-brand-accent text-sm font-bold flex items-center gap-1">Read on LinkedIn <i class="ph ph-arrow-up-right"></i></a>
                         </div>
                     </article>
@@ -426,18 +429,37 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT SECTION -->
         <section id="contact" class="py-32 bg-brand-accent text-white text-center px-6 relative overflow-hidden">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-3xl pointer-events-none"></div>
             <div class="container mx-auto relative z-10 max-w-4xl scroll-anim">
-                <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8">Let's work together.</h2>
-                <a href="mailto:gourabsaha2907@gmail.com" class="inline-block bg-white text-brand-accent font-bold text-lg px-10 py-5 rounded-full hover:scale-105 transition-all">Start a Conversation</a>
+                <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8">Have an idea in mind?</h2>
+                <a href="https://wa.me/qr/5UKYC2OBWOSIN1" target="_blank" class="inline-block bg-white text-brand-accent font-bold text-lg px-10 py-5 rounded-full hover:scale-105 transition-all hover-target shadow-xl">
+                    Start a Conversation
+                </a>
             </div>
         </section>
     </main>
 
     <footer class="bg-brand-900 dark:bg-black text-white py-16 text-center">
         <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/10 pb-8 mb-8">
+                <a href="#" class="text-3xl font-serif font-bold tracking-tight">GS<span class="text-brand-accent">.</span></a>
+                <div class="flex gap-6 text-2xl">
+                    <a href="https://www.linkedin.com/in/gourabsaha07/" target="_blank" class="hover:text-brand-accent transition-colors" title="LinkedIn">
+                        <i class="ph ph-linkedin-logo"></i>
+                    </a>
+                    <a href="https://www.behance.net/gourabsaha1" target="_blank" class="hover:text-brand-accent transition-colors" title="Behance">
+                        <i class="ph ph-behance-logo"></i>
+                    </a>
+                    <a href="https://www.facebook.com/Gourab.saha.1" target="_blank" class="hover:text-brand-accent transition-colors" title="Facebook">
+                        <i class="ph ph-facebook-logo"></i>
+                    </a>
+                    <a href="https://wa.me/qr/5UKYC2OBWOSIN1" target="_blank" class="hover:text-brand-accent transition-colors" title="WhatsApp">
+                        <i class="ph ph-whatsapp-logo"></i>
+                    </a>
+                </div>
+            </div>
             <p class="text-gray-400 text-sm">© 2025 Gourab Saha. All Rights Reserved.</p>
         </div>
     </footer>
