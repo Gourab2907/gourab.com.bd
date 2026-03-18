@@ -592,7 +592,7 @@
                 <div class="mt-10 text-center md:hidden">
                      <a href="https://www.behance.net/gourabsaha1" target="_blank" class="inline-flex items-center gap-2 font-semibold border-b border-brand-900 dark:border-white pb-1">
                         View Full Behance <i class="ph ph-arrow-up-right"></i>
-                    </a>
+                     </a>
                 </div>
             </div>
         </section>
@@ -668,6 +668,8 @@
               .to('.type-char, .blinking-cursor', { y: "-100%", opacity: 0, rotate: -10, duration: 0.5, stagger: 0.02 }, 1.6)
               .to('#loader', { yPercent: -100, duration: 1, ease: "expo.inOut" }, 1.9)
               .from('.gs-title', { y: 100, opacity: 0, stagger: 0.1 }, 2.2)
+              .to('.reveal-mask', { yPercent: -101, duration: 1.2, ease: "expo.inOut" }, 2.2)
+              .from('.hero-img', { scale: 1.5, duration: 1.5 }, 2.2)
               .from('.gs-reveal', { y: 20, opacity: 0, stagger: 0.1 }, 2.4);
 
             setTimeout(() => {
