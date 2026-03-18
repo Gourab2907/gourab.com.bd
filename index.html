@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO Meta Tags -->
     <title>Gourab Saha | CA & Graphic Designer</title>
     <meta name="description" content="Portfolio of Gourab Saha, a Chartered Accountancy aspirant blending financial precision with creative graphic design." />
+    <meta name="keywords" content="Gourab Saha, Chartered Accountant, Graphic Designer, Portfolio, Audit, Branding, Finance" />
+    <meta name="author" content="Gourab Saha" />
     
-    <!-- Google Fonts -->
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Gourab Saha | CA & Graphic Designer" />
+    <meta property="og:description" content="Balancing the Books, Designing the Future. Explore my work in finance and design." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Lottie Player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- GSAP & Lenis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
@@ -24,9 +38,23 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] },
-                    colors: { brand: { 50: '#f4f6f8', 100: '#e4e9f0', 800: '#1e293b', 900: '#0f172a', accent: '#3b82f6', accentHover: '#2563eb' } },
-                    transitionTimingFunction: { 'expo': 'cubic-bezier(0.16, 1, 0.3, 1)' }
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f6f8',
+                            100: '#e4e9f0',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            accent: '#3b82f6',
+                            accentHover: '#2563eb'
+                        }
+                    },
+                    transitionTimingFunction: {
+                        'expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    }
                 }
             }
         }
@@ -35,21 +63,95 @@
     <style>
         html.lenis { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto; }
-        body { background-color: #fafafa; color: #0f172a; overflow-x: hidden; transition: background-color 0.4s ease, color 0.4s ease; }
-        body.dark { background-color: #0f172a; color: #f8fafc; }
-        .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 9999; pointer-events: none; }
-        .cursor-dot { width: 8px; height: 8px; background-color: #3b82f6; }
-        .cursor-outline { width: 40px; height: 40px; border: 1px solid rgba(59, 130, 246, 0.5); transition: width 0.2s, height 0.2s, background-color 0.2s; }
-        @media (min-width: 1024px) { * { cursor: none !important; } }
-        .glass-nav { background: rgba(250, 250, 250, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .dark .glass-nav { background: rgba(15, 23, 42, 0.7); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .reveal-img-container { position: relative; overflow: hidden; border-radius: 9999px; }
-        .reveal-mask { position: absolute; inset: 0; background: #0f172a; z-index: 10; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        
+        body {
+            background-color: #fafafa;
+            color: #0f172a;
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        body.dark {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .cursor-dot, .cursor-outline {
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px; height: 8px;
+            background-color: #3b82f6;
+        }
+        .cursor-outline {
+            width: 40px; height: 40px;
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        
+        @media (min-width: 1024px) {
+            * { cursor: none !important; }
+        }
+
+        .glass-nav {
+            background: rgba(250, 250, 250, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.7);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .reveal-img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+        .reveal-mask {
+            position: absolute;
+            inset: 0;
+            background: #0f172a;
+            z-index: 10;
+        }
         .dark .reveal-mask { background: #fafafa; }
-        .bento-card { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease; }
-        .bento-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); }
-        .blinking-cursor { animation: blink 1s step-end infinite; }
-        @keyframes blink { from, to { opacity: 1; } 50% { opacity: 0; } }
+
+        .bento-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+        .dark .bento-card:hover {
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+        }
+        
+        .timeline-line {
+            transform-origin: top;
+            transform: scaleY(0);
+        }
+
+        .blinking-cursor {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-accent selection:text-white">
@@ -63,16 +165,27 @@
             <span class="text-xs md:text-sm font-medium tracking-widest uppercase opacity-50">GS. Portfolio</span>
             <span id="loader-counter" class="text-4xl md:text-6xl font-light font-serif">0%</span>
         </div>
+        
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center">
             <div class="font-serif font-bold text-5xl md:text-7xl lg:text-9xl tracking-tight flex justify-center items-center py-4 overflow-hidden">
                 <div class="flex">
-                    <span class="type-char inline-block opacity-0">G</span><span class="type-char inline-block opacity-0">o</span><span class="type-char inline-block opacity-0">u</span><span class="type-char inline-block opacity-0">r</span><span class="type-char inline-block opacity-0">a</span><span class="type-char inline-block opacity-0">b</span>
+                    <span class="type-char inline-block opacity-0">G</span>
+                    <span class="type-char inline-block opacity-0">o</span>
+                    <span class="type-char inline-block opacity-0">u</span>
+                    <span class="type-char inline-block opacity-0">r</span>
+                    <span class="type-char inline-block opacity-0">a</span>
+                    <span class="type-char inline-block opacity-0">b</span>
                     <span class="w-4 md:w-8 lg:w-12"></span>
-                    <span class="type-char inline-block opacity-0">S</span><span class="type-char inline-block opacity-0">a</span><span class="type-char inline-block opacity-0">h</span><span class="type-char inline-block opacity-0">a</span><span class="type-char inline-block opacity-0">.</span>
+                    <span class="type-char inline-block opacity-0">S</span>
+                    <span class="type-char inline-block opacity-0">a</span>
+                    <span class="type-char inline-block opacity-0">h</span>
+                    <span class="type-char inline-block opacity-0">a</span>
+                    <span class="type-char inline-block opacity-0">.</span>
                 </div>
-                <span class="blinking-cursor text-brand-accent ml-2 md:ml-4">|</span>
+                <span class="blinking-cursor text-brand-accent ml-2 md:ml-4 -mt-2 md:-mt-4">|</span>
             </div>
         </div>
+
         <div class="w-full h-[2px] bg-white/10 relative z-10">
             <div id="loader-progress" class="absolute top-0 left-0 h-full w-0 bg-brand-accent"></div>
         </div>
@@ -81,51 +194,98 @@
     <!-- Navigation -->
     <header class="fixed top-0 w-full z-50 glass-nav transition-colors duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif font-bold tracking-tight">GS<span class="text-brand-accent">.</span></a>
+            <a href="#" class="text-2xl font-serif font-bold tracking-tight z-50 hover-target">
+                GS<span class="text-brand-accent">.</span>
+            </a>
+            
             <div class="hidden md:flex space-x-8 items-center font-medium text-sm">
-                <a href="#about" class="hover:text-brand-accent transition-colors">About</a>
-                <a href="#skills" class="hover:text-brand-accent transition-colors">Skills</a>
-                <a href="#experience" class="hover:text-brand-accent transition-colors">Experience</a>
-                <a href="#articles" class="hover:text-brand-accent transition-colors">Articles</a>
-                <a href="#portfolio" class="hover:text-brand-accent transition-colors">Portfolio</a>
-                <a href="#contact" class="px-5 py-2 rounded-full bg-brand-900 text-white dark:bg-white dark:text-brand-900 hover:scale-105 transition-transform">Let's Talk</a>
-                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-colors">
+                <a href="#about" class="hover:text-brand-accent transition-colors hover-target">About</a>
+                <a href="#skills" class="hover:text-brand-accent transition-colors hover-target">Skills</a>
+                <a href="#experience" class="hover:text-brand-accent transition-colors hover-target">Journey</a>
+                <a href="#articles" class="hover:text-brand-accent transition-colors hover-target">Articles</a>
+                <a href="#portfolio" class="hover:text-brand-accent transition-colors hover-target">Portfolio</a>
+                <a href="#contact" class="px-5 py-2 rounded-full bg-brand-900 text-white dark:bg-white dark:text-brand-900 hover:scale-105 transition-transform hover-target">Let's Talk</a>
+                
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover-target transition-colors">
                     <i class="ph ph-moon text-lg dark:hidden"></i>
                     <i class="ph ph-sun text-lg hidden dark:block text-yellow-400"></i>
                 </button>
             </div>
-            <div class="md:hidden flex items-center gap-4">
-                <button id="mobile-menu-btn" class="text-2xl"><i class="ph ph-list"></i></button>
+
+            <div class="md:hidden flex items-center gap-4 z-50">
+                <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800">
+                    <i class="ph ph-moon dark:hidden"></i>
+                    <i class="ph ph-sun hidden dark:block text-yellow-400"></i>
+                </button>
+                <button id="mobile-menu-btn" class="text-2xl">
+                    <i class="ph ph-list"></i>
+                </button>
             </div>
         </nav>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-brand-900 flex flex-col justify-center items-center space-y-8 text-2xl font-serif font-bold opacity-0 pointer-events-none transition-opacity duration-300">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#experience" class="mobile-link">Journey</a>
+            <a href="#articles" class="mobile-link">Articles</a>
+            <a href="#portfolio" class="mobile-link">Portfolio</a>
+            <a href="#contact" class="mobile-link text-brand-accent">Let's Talk</a>
+        </div>
     </header>
 
     <main>
         <!-- HERO SECTION -->
         <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between z-10">
-                <div class="md:w-3/5 text-center md:text-left">
+                <div class="md:w-3/5 text-center md:text-left pt-10 md:pt-0">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 dark:bg-gray-800 text-sm font-semibold mb-6 gs-reveal">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Available for projects
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Available for new opportunities
                     </div>
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.1] mb-6">
                         <div class="overflow-hidden"><span class="block gs-title">Balancing the Books.</span></div>
-                        <div class="overflow-hidden"><span class="block gs-title text-brand-accent">Designing Future.</span></div>
+                        <div class="overflow-hidden"><span class="block gs-title text-gray-400 dark:text-gray-500">Designing the</span></div>
+                        <div class="overflow-hidden"><span class="block gs-title text-gradient">Future.</span></div>
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl mb-10 gs-reveal">Gourab Saha — Professional BBA Aspirant & Graphic Designer combining financial logic with aesthetic precision.</p>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl mb-10 gs-reveal font-light leading-relaxed">
+                        I am Gourab Saha, a results-driven professional with expertise in business process engineering and financial accuracy, combined with a creative edge in graphic design.
+                    </p>
                     <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 gs-reveal">
-                        <a href="#portfolio" class="px-8 py-4 bg-brand-900 dark:bg-white text-white dark:text-brand-900 rounded-full font-semibold hover:shadow-lg transition-all">View Portfolio</a>
-                        <a href="mailto:gourabsaha2907@gmail.com" class="px-8 py-4 rounded-full font-semibold border border-gray-300 dark:border-gray-700 hover:bg-gray-100 transition-all">Contact Me</a>
+                        <a href="#portfolio" class="group flex items-center gap-2 px-8 py-4 bg-brand-900 dark:bg-white text-white dark:text-brand-900 rounded-full font-semibold hover:shadow-lg transition-all hover-target">
+                            View Portfolio
+                            <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#experience" class="px-8 py-4 rounded-full font-semibold border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all hover-target">
+                            My Journey
+                        </a>
                     </div>
                 </div>
-                <div class="md:w-2/5 mt-16 md:mt-0 relative flex justify-center">
-                    <div class="relative w-72 h-72 md:w-96 md:h-96 reveal-img-container shadow-2xl">
-                        <div class="reveal-mask"></div>
-                        <!-- THIS IS THE IMAGE TAG -->
-                        <img src="Assets/ProfilePicture2.png" 
-                             onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop';" 
-                             alt="Gourab Saha" class="w-full h-full object-cover hero-img scale-110" />
+                <div class="md:w-2/5 mt-16 md:mt-0 relative flex justify-center items-center w-full">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 opacity-50 pointer-events-none">
+                        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_q4uuzjkx.json" background="transparent" speed="0.5" loop autoplay></lottie-player>
                     </div>
+                    <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full reveal-img-container shadow-2xl">
+                        <div class="reveal-mask"></div>
+                        <img src="Assets/ProfilePicture2.png" 
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop';" 
+                             alt="Gourab Saha" class="w-full h-full object-cover hero-img scale-110" />
+                        
+                        <div class="absolute bottom-4 -left-8 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl floating-element hidden md:flex items-center gap-3">
+                            <div class="bg-brand-100 dark:bg-gray-700 p-2 rounded-full text-brand-accent">
+                                <i class="ph ph-chart-line-up text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Focus</p>
+                                <p class="text-sm font-semibold">Consulting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+                <span class="text-xs uppercase tracking-widest font-semibold">Scroll</span>
+                <div class="w-[1px] h-12 bg-gray-400 dark:bg-gray-600 overflow-hidden relative">
+                    <div class="w-full h-full bg-brand-accent absolute top-0 -translate-y-full animate-[scroll-down_1.5s_ease-in-out_infinite]"></div>
                 </div>
             </div>
         </section>
@@ -133,75 +293,391 @@
         <!-- STATS SECTION -->
         <section id="about" class="py-24 bg-brand-50 dark:bg-gray-900/50">
             <div class="container mx-auto px-6">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                    <div class="bento-card bg-white dark:bg-gray-800 p-8 rounded-[32px] border border-gray-100 dark:border-gray-700 scroll-anim">
-                        <i class="ph ph-briefcase text-2xl text-brand-accent mb-4"></i>
-                        <h3 class="text-4xl font-serif font-bold">3+</h3>
-                        <p class="text-xs uppercase font-bold tracking-widest text-gray-400">Experience</p>
+                <div class="flex flex-col md:flex-row gap-16 items-center mb-24">
+                    <div class="md:w-1/2">
+                        <!-- 4 Individual Stat Cards -->
+                        <div class="grid grid-cols-2 gap-4 md:gap-6">
+                            <div class="bento-card bg-white dark:bg-gray-800 p-6 md:p-8 rounded-[32px] shadow-sm border border-gray-100 dark:border-gray-700 scroll-anim">
+                                <div class="w-12 h-12 bg-brand-50 dark:bg-gray-700 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+                                    <i class="ph ph-briefcase text-2xl"></i>
+                                </div>
+                                <h3 class="text-4xl font-serif font-bold mb-1">3+</h3>
+                                <p class="text-[11px] uppercase font-bold tracking-widest text-gray-400">Experience</p>
+                            </div>
+                            <div class="bento-card bg-white dark:bg-gray-800 p-6 md:p-8 rounded-[32px] shadow-sm border border-gray-100 dark:border-gray-700 scroll-anim" style="transition-delay: 100ms;">
+                                <div class="w-12 h-12 bg-brand-50 dark:bg-gray-700 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+                                    <i class="ph ph-users text-2xl"></i>
+                                </div>
+                                <h3 class="text-4xl font-serif font-bold mb-1">70+</h3>
+                                <p class="text-[11px] uppercase font-bold tracking-widest text-gray-400">Happy Clients</p>
+                            </div>
+                            <div class="bento-card bg-white dark:bg-gray-800 p-6 md:p-8 rounded-[32px] shadow-sm border border-gray-100 dark:border-gray-700 scroll-anim" style="transition-delay: 200ms;">
+                                <div class="w-12 h-12 bg-brand-50 dark:bg-gray-700 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+                                    <i class="ph ph-files text-2xl"></i>
+                                </div>
+                                <h3 class="text-4xl font-serif font-bold mb-1">117+</h3>
+                                <p class="text-[11px] uppercase font-bold tracking-widest text-gray-400">Business Policy</p>
+                            </div>
+                            <div class="bento-card bg-white dark:bg-gray-800 p-6 md:p-8 rounded-[32px] shadow-sm border border-gray-100 dark:border-gray-700 scroll-anim" style="transition-delay: 300ms;">
+                                <div class="w-12 h-12 bg-brand-50 dark:bg-gray-700 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+                                    <i class="ph ph-gear text-2xl"></i>
+                                </div>
+                                <h3 class="text-4xl font-serif font-bold mb-1">150+</h3>
+                                <p class="text-[11px] uppercase font-bold tracking-widest text-gray-400 leading-tight">Business SOP</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bento-card bg-white dark:bg-gray-800 p-8 rounded-[32px] border border-gray-100 dark:border-gray-700 scroll-anim" style="transition-delay: 100ms;">
-                        <i class="ph ph-users text-2xl text-brand-accent mb-4"></i>
-                        <h3 class="text-4xl font-serif font-bold">70+</h3>
-                        <p class="text-xs uppercase font-bold tracking-widest text-gray-400">Happy Clients</p>
-                    </div>
-                    <div class="bento-card bg-white dark:bg-gray-800 p-8 rounded-[32px] border border-gray-100 dark:border-gray-700 scroll-anim" style="transition-delay: 200ms;">
-                        <i class="ph ph-files text-2xl text-brand-accent mb-4"></i>
-                        <h3 class="text-4xl font-serif font-bold">117+</h3>
-                        <p class="text-xs uppercase font-bold tracking-widest text-gray-400">Business Policy</p>
-                    </div>
-                    <div class="bento-card bg-white dark:bg-gray-800 p-8 rounded-[32px] border border-gray-100 dark:border-gray-700 scroll-anim" style="transition-delay: 300ms;">
-                        <i class="ph ph-gear text-2xl text-brand-accent mb-4"></i>
-                        <h3 class="text-4xl font-serif font-bold">150+</h3>
-                        <p class="text-xs uppercase font-bold tracking-widest text-gray-400">Business SOP</p>
+                    <div class="md:w-1/2">
+                        <p class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-4 scroll-anim">About Me</p>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6 scroll-anim">Logic meets Creativity.</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6 scroll-anim">
+                            I am a detail-oriented Chartered Accountancy aspirant equipped with a strong foundation in accounting principles, taxation, and financial management. 
+                        </p>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 scroll-anim">
+                            Alongside my professional journey, I have cultivated a deep passion for graphic design. This dual perspective enables me to approach complex problems logically while delivering solutions that are visually compelling and user-centric.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center gap-2 font-semibold text-brand-900 dark:text-white border-b-2 border-brand-accent pb-1 hover:text-brand-accent transition-colors scroll-anim hover-target">
+                            Get in touch <i class="ph ph-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-24 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16 scroll-anim">
+                    <p class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-4">Expertise</p>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold">My Toolkit</h2>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="bg-brand-50 dark:bg-gray-800/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-700 scroll-anim">
+                        <div class="w-14 h-14 bg-white dark:bg-gray-700 rounded-2xl flex items-center justify-center text-brand-accent text-2xl mb-6 shadow-sm">
+                            <i class="ph ph-calculator"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-6">Finance & Audit</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> Audit & Assurance</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> Taxation</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> Process Development</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> QuickBooks & Oracle</li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-50 dark:bg-gray-800/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-700 scroll-anim" style="transition-delay: 100ms;">
+                        <div class="w-14 h-14 bg-white dark:bg-gray-700 rounded-2xl flex items-center justify-center text-brand-accent text-2xl mb-6 shadow-sm">
+                            <i class="ph ph-bezier-curve"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-6">Graphic Design</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> Brand Identity</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> Adobe Illustrator</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> Adobe Photoshop</li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-50 dark:bg-gray-800/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-700 scroll-anim" style="transition-delay: 200ms;">
+                        <div class="w-14 h-14 bg-white dark:bg-gray-700 rounded-2xl flex items-center justify-center text-brand-accent text-2xl mb-6 shadow-sm">
+                            <i class="ph ph-microsoft-word-logo"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-6">Office & Leadership</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> MS Excel (Advanced)</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> MS Word (Advanced)</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> PowerBI</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> MS Visio & PPT</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> Team Leadership</li>
+                            <li class="flex items-center gap-3"><i class="ph ph-check-circle text-brand-accent"></i> Event Organization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE & EDUCATION SECTION -->
+        <section id="experience" class="py-24 bg-brand-900 text-white relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16 scroll-anim">
+                    <p class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-4">Journey</p>
+                    <h2 class="text-4xl font-serif font-bold">Experience & Education</h2>
+                </div>
+                <div class="max-w-4xl mx-auto relative">
+                    <!-- The animated line -->
+                    <div class="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gray-700 timeline-track">
+                        <div class="w-full h-full bg-brand-accent timeline-line"></div>
+                    </div>
+
+                    <!-- Item 1: ACNABIN -->
+                    <div class="mb-16 md:flex justify-between items-center w-full right-timeline scroll-anim relative">
+                        <div class="hidden md:block md:w-5/12 text-right pr-8">
+                            <h3 class="text-2xl font-bold">Senior Audit Associate</h3>
+                            <p class="text-brand-accent font-medium mb-2">ACNABIN, Chartered Accountants</p>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-brand-900 border-4 border-brand-accent z-10"></div>
+                        <div class="pl-12 md:pl-0 md:w-5/12 md:text-left md:pl-8">
+                            <div class="md:hidden mb-2">
+                                <h3 class="text-xl font-bold">Senior Audit Associate</h3>
+                                <p class="text-brand-accent text-sm">ACNABIN, Chartered Accountants</p>
+                            </div>
+                            <span class="inline-block py-1 px-3 rounded-full bg-gray-800 text-sm font-semibold mb-3">June 2023 - Present</span>
+                            <p class="text-gray-400 leading-relaxed text-sm">Conducting statutory audits, ensuring compliance, and evaluating internal controls for major corporate clients.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: ICAB -->
+                    <div class="mb-16 md:flex justify-between items-center w-full left-timeline scroll-anim relative">
+                        <div class="pl-12 md:pl-0 md:w-5/12 md:text-right md:pr-8 order-2 md:order-1">
+                            <div class="md:hidden mb-2">
+                                <h3 class="text-xl font-bold">CA (Partly Qualified)</h3>
+                                <p class="text-brand-accent text-sm">ICAB</p>
+                            </div>
+                            <span class="inline-block py-1 px-3 rounded-full bg-gray-800 text-sm font-semibold mb-3">Professional Level</span>
+                            <p class="text-gray-400 leading-relaxed text-sm">Pursuing professional level CA. Rigorous training in advanced accounting, taxation, and corporate laws.</p>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-brand-900 border-4 border-brand-accent z-10 order-1 md:order-2"></div>
+                        <div class="hidden md:block md:w-5/12 text-left pl-8 order-3">
+                            <h3 class="text-2xl font-bold">Chartered Accountant</h3>
+                            <p class="text-brand-accent font-medium mb-2">Institute of Chartered Accountants Bangladesh</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Freelance Design -->
+                    <div class="mb-16 md:flex justify-between items-center w-full right-timeline scroll-anim relative">
+                        <div class="hidden md:block md:w-5/12 text-right pr-8">
+                            <h3 class="text-2xl font-bold">Freelance Graphic Designer</h3>
+                            <p class="text-brand-accent font-medium mb-2">Self-Employed</p>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-brand-900 border-4 border-gray-600 z-10"></div>
+                        <div class="pl-12 md:pl-0 md:w-5/12 md:text-left md:pl-8">
+                            <div class="md:hidden mb-2">
+                                <h3 class="text-xl font-bold">Freelance Designer</h3>
+                                <p class="text-brand-accent text-sm">Self-Employed</p>
+                            </div>
+                            <span class="inline-block py-1 px-3 rounded-full bg-gray-800 text-sm font-semibold mb-3">2020 - 2022</span>
+                            <p class="text-gray-400 leading-relaxed text-sm">Solved design challenges for 70+ clients worldwide, focusing on identity branding and corporate assets.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: BBA Education -->
+                    <div class="mb-16 md:flex justify-between items-center w-full left-timeline scroll-anim relative">
+                        <div class="pl-12 md:pl-0 md:w-5/12 md:text-right md:pr-8 order-2 md:order-1">
+                            <div class="md:hidden mb-2">
+                                <h3 class="text-xl font-bold">BBA in AIS</h3>
+                                <p class="text-brand-accent text-sm">JKKNIU</p>
+                            </div>
+                            <span class="inline-block py-1 px-3 rounded-full bg-gray-800 text-sm font-semibold mb-3">2019 - 2024</span>
+                            <p class="text-gray-400 leading-relaxed text-sm">Graduated with a Major in Accounting and Information Systems. Highly active in Career Club as Organizing Secretary.</p>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-brand-900 border-4 border-gray-600 z-10 order-1 md:order-2"></div>
+                        <div class="hidden md:block md:w-5/12 text-left pl-8 order-3">
+                            <h3 class="text-2xl font-bold">Bachelor of Business Administration</h3>
+                            <p class="text-brand-accent font-medium mb-2">Jatiya Kabi Kazi Nazrul Islam University</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTICLES SECTION -->
+        <section id="articles" class="py-24 md:py-32 bg-brand-50 dark:bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 scroll-anim">
+                    <div class="max-w-2xl">
+                        <p class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-4">Professional Insights</p>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold">Latest Articles</h2>
+                    </div>
+                    <a href="https://www.linkedin.com/in/gourabsaha07/" target="_blank" class="hidden md:inline-flex items-center gap-2 font-semibold border-b border-brand-900 dark:border-white pb-1 hover-target hover:text-brand-accent transition-colors">
+                        More on LinkedIn <i class="ph ph-linkedin-logo"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
+                    <!-- Article 1 -->
+                    <article class="bento-card rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 scroll-anim relative overflow-hidden group min-h-[420px] flex flex-col hover-target">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop" alt="Bookkeeping" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-gray-900/30 z-0 transition-opacity duration-300 group-hover:opacity-90"></div>
+                        <div class="relative z-10 p-8 flex flex-col h-full justify-between flex-grow">
+                            <div>
+                                <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white text-xl mb-6">
+                                    <i class="ph ph-linkedin-logo"></i>
+                                </div>
+                                <div class="text-xs font-bold uppercase tracking-wider text-blue-300 mb-3">Finance & Control</div>
+                            </div>
+                            <div class="mt-auto text-left">
+                                <h3 class="text-xl md:text-2xl font-bold mb-4 line-clamp-2">The Essentials of Bookkeeping & Financial Control</h3>
+                                <p class="text-gray-300 text-sm mb-6 line-clamp-3">Exploring the core principles of accurate record-keeping and robust control systems.</p>
+                                <a href="https://www.linkedin.com/posts/gourabsaha07_bookkeeping-financialcontrol-accounting-activity-7407395848827023360-XgWi" target="_blank" class="inline-flex items-center gap-2 font-bold text-white hover:text-blue-300 transition-colors w-max group/link">
+                                    Read Post <i class="ph ph-arrow-up-right group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="bento-card rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 scroll-anim relative overflow-hidden group min-h-[420px] flex flex-col hover-target" style="transition-delay: 100ms;">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="QuickBooks" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-gray-900/30 z-0 transition-opacity duration-300 group-hover:opacity-90"></div>
+                        <div class="relative z-10 p-8 flex flex-col h-full justify-between flex-grow">
+                            <div>
+                                <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white text-xl mb-6">
+                                    <i class="ph ph-linkedin-logo"></i>
+                                </div>
+                                <div class="text-xs font-bold uppercase tracking-wider text-blue-300 mb-3">Reconciliation</div>
+                            </div>
+                            <div class="mt-auto text-left">
+                                <h3 class="text-xl md:text-2xl font-bold mb-4 line-clamp-2">Mastering QuickBooks & Bank Reconciliation</h3>
+                                <p class="text-gray-300 text-sm mb-6 line-clamp-3">streamlining financial workflows and ensuring accuracy through effective bank reconciliation.</p>
+                                <a href="https://www.linkedin.com/posts/gourabsaha07_quickbooks-bankreconciliation-bookkeeping-activity-7402324435329765376-vCWn" target="_blank" class="inline-flex items-center gap-2 font-bold text-white hover:text-blue-300 transition-colors w-max group/link">
+                                    Read Post <i class="ph ph-arrow-up-right group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="bento-card rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 scroll-anim relative overflow-hidden group min-h-[420px] flex flex-col hover-target" style="transition-delay: 200ms;">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop" alt="Strategy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-gray-900/30 z-0 transition-opacity duration-300 group-hover:opacity-90"></div>
+                        <div class="relative z-10 p-8 flex flex-col h-full justify-between flex-grow">
+                            <div>
+                                <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white text-xl mb-6">
+                                    <i class="ph ph-linkedin-logo"></i>
+                                </div>
+                                <div class="text-xs font-bold uppercase tracking-wider text-blue-300 mb-3">Accounting Strategy</div>
+                            </div>
+                            <div class="mt-auto text-left">
+                                <h3 class="text-xl md:text-2xl font-bold mb-4 line-clamp-2">Advanced Accounting & Financial Control</h3>
+                                <p class="text-gray-300 text-sm mb-6 line-clamp-3">Deep dive into structuring advanced accounting practices that empower decision-making.</p>
+                                <a href="https://www.linkedin.com/posts/gourabsaha07_bookkeeping-financialcontrol-accounting-activity-7410552804488093696-_NVO" target="_blank" class="inline-flex items-center gap-2 font-bold text-white hover:text-blue-300 transition-colors w-max group/link">
+                                    Read Post <i class="ph ph-arrow-up-right group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" class="py-24 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 scroll-anim">
+                    <div class="max-w-2xl text-left">
+                        <p class="text-brand-accent font-semibold tracking-wider uppercase text-sm mb-4">Selected Works</p>
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold">Design Portfolio</h2>
+                    </div>
+                    <a href="https://www.behance.net/gourabsaha1" target="_blank" class="hidden md:inline-flex items-center gap-2 font-semibold border-b border-brand-900 dark:border-white pb-1 hover-target hover:text-brand-accent transition-colors">
+                        View Full Behance <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <article class="group rounded-3xl overflow-hidden bg-brand-50 dark:bg-gray-800 scroll-anim hover-target">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" alt="Brand Identity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <a href="https://www.behance.net/gourabsaha1" target="_blank" class="w-12 h-12 bg-white text-brand-900 rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                    <i class="ph ph-arrow-up-right text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-8 text-left">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brand-accent mb-2">Branding</div>
+                            <h3 class="text-2xl font-bold mb-3">Identity Branding</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Crafting visual identities that communicate brand values and precision.</p>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="mt-10 text-center md:hidden">
+                     <a href="https://www.behance.net/gourabsaha1" target="_blank" class="inline-flex items-center gap-2 font-semibold border-b border-brand-900 dark:border-white pb-1">
+                        View Full Behance <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-32 bg-brand-accent text-white text-center px-6 relative overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="container mx-auto relative z-10 max-w-4xl scroll-anim">
+                <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8">Have an idea in mind?</h2>
+                <a href="mailto:gourabsaha2907@gmail.com" class="inline-block bg-white text-brand-accent font-bold text-lg px-10 py-5 rounded-full hover:scale-105 transition-all hover-target">Start a Conversation</a>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-brand-900 dark:bg-black text-white py-16 text-center">
-        <div class="container mx-auto px-6">
-            <p class="text-gray-400 text-sm">© 2025 Gourab Saha. All Rights Reserved.</p>
+    <footer class="bg-brand-900 dark:bg-black text-white py-16 text-center md:text-left">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+                <a href="#" class="text-3xl font-serif font-bold tracking-tight inline-block mb-2 hover-target">GS<span class="text-brand-accent">.</span></a>
+                <p class="text-gray-400 text-sm">© 2025 Gourab Saha. All Rights Reserved.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="https://www.linkedin.com/in/gourabsaha07/" target="_blank" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-brand-accent transition-colors hover-target"><i class="ph ph-linkedin-logo text-xl"></i></a>
+                <a href="https://www.behance.net/gourabsaha1" target="_blank" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-brand-accent transition-colors hover-target"><i class="ph ph-behance-logo text-xl"></i></a>
+                <a href="https://wa.me/qr/5UKYC2OBWOSIN1" target="_blank" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-brand-accent transition-colors hover-target"><i class="ph ph-whatsapp-logo text-xl"></i></a>
+            </div>
         </div>
     </footer>
 
     <script>
-        const lenis = new Lenis({ duration: 1.2 });
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((t)=> lenis.raf(t * 1000));
 
-        // Custom Cursor
         if(window.innerWidth >= 1024) {
             const dot = document.querySelector('.cursor-dot');
             const outline = document.querySelector('.cursor-outline');
             window.addEventListener('mousemove', (e) => {
-                gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0.1 });
-                gsap.to(outline, { x: e.clientX, y: e.clientY, duration: 0.3 });
+                dot.style.left = outline.style.left = `${e.clientX}px`;
+                dot.style.top = outline.style.top = `${e.clientY}px`;
+                outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
             });
         }
 
-        // Theme Toggle
         const themeBtn = document.getElementById('theme-toggle');
-        themeBtn.onclick = () => {
+        function toggleTheme() {
             document.body.classList.toggle('dark');
+            document.documentElement.classList.toggle('dark');
             localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        }
+        themeBtn.onclick = toggleTheme;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.body.classList.add('dark'); document.documentElement.classList.add('dark');
+        }
+
+        const mbBtn = document.getElementById('mobile-menu-btn');
+        const mbMenu = document.getElementById('mobile-menu');
+        mbBtn.onclick = () => {
+            const open = mbMenu.style.opacity === '1';
+            mbMenu.style.opacity = open ? '0' : '1';
+            mbMenu.style.pointerEvents = open ? 'none' : 'auto';
+            mbBtn.innerHTML = open ? '<i class="ph ph-list"></i>' : '<i class="ph ph-x"></i>';
+            open ? lenis.start() : lenis.stop();
         };
 
-        window.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('load', () => {
             const tl = gsap.timeline();
             let c = { v: 0 };
             tl.to(c, { v: 100, duration: 1.5, onUpdate: () => document.getElementById('loader-counter').innerText = Math.round(c.v) + '%' })
               .to('#loader-progress', { width: '100%', duration: 1.5 }, 0)
-              .to('.type-char', { opacity: 1, stagger: 0.05 }, 0.2)
-              .to('#loader', { yPercent: -100, duration: 1, ease: "expo.inOut" }, 1.8)
-              .from('.gs-title', { y: 100, opacity: 0, stagger: 0.1 }, 2.0)
-              .to('.reveal-mask', { yPercent: -101, duration: 1.2, ease: "expo.inOut" }, 2.0)
-              .from('.hero-img', { scale: 1.5, duration: 1.5 }, 2.0)
-              .from('.gs-reveal', { y: 20, opacity: 0, stagger: 0.1 }, 2.2);
+              .to('.type-char', { opacity: 1, stagger: 0.06 }, 0.2)
+              .to('.type-char, .blinking-cursor', { y: "-100%", opacity: 0, rotate: -10, duration: 0.5, stagger: 0.02 }, 1.6)
+              .to('#loader', { yPercent: -100, duration: 1, ease: "expo.inOut" }, 1.9)
+              .from('.gs-title', { y: 100, opacity: 0, stagger: 0.1 }, 2.2)
+              .from('.gs-reveal', { y: 20, opacity: 0, stagger: 0.1 }, 2.4);
+
+            setTimeout(() => {
+                tl.play();
+            }, 500);
 
             gsap.utils.toArray('.scroll-anim').forEach(e => {
                 gsap.from(e, { scrollTrigger: { trigger: e, start: "top 85%" }, y: 40, opacity: 0, duration: 0.8 });
             });
+            gsap.to('.timeline-line', { scrollTrigger: { trigger: '#experience', start: "top 80%", scrub: 1 }, scaleY: 1 });
         });
     </script>
 </body>
